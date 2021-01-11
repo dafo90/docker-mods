@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
-if [ -n "$MARIADBLIB" ] && [ "$MARIADBLIB" = "true" ]; then
-  echo "MARIADBLIB variable is true, installing the MariaDB library (libmariadb-dev)"
+if [ -n "$MARIADBLIB" ] && [ "${MARIADBLIB,,}" = "true" ]; then
+  echo "MARIADBLIB variable is true, installing the MariaDB library (libmariadb3)"
   apt-get update
-  apt-get install -y libmariadb-dev
+  apt-get install -y libmariadb3
 fi
